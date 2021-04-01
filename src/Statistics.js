@@ -1,15 +1,18 @@
+import Statistic from './Statistic.js'
+
+
 const Statistics = (props) => {
-    const {good,neutral, bad} = props
+    const {all,average,positive,good,neutral, bad} = props
     return(
         <div>
             {good || neutral || bad?
             <div>
-                <p>Good:{props.good}</p>
-                <p>Neutral:{props.neutral}</p>
-                <p>Bad:{props.bad}</p>
-                <p>All:{props.all}</p>
-                <p>Average:{props.average}</p>
-                <p>Positive:{props.positive}</p>
+                <Statistic text="good" value ={good} />
+                <Statistic text="neutral" value ={neutral} />
+                <Statistic text="bad" value ={bad} />
+                <Statistic text="all" value ={all} />
+                <Statistic text="average" value ={average} />
+                <Statistic text="positive" value ={positive} />             
             </div>
             :
             <h3>No feedback given</h3>}
